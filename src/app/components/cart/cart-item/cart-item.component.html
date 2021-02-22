@@ -1,0 +1,39 @@
+<div class="props">
+  <div class="porps__wrapper">
+    <span class="props__name">name:</span>
+    <span class="props__value">{{ bookData.name }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">description:</span>
+    <span class="props__value">{{ bookData.description }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">price:</span>
+    <span class="props__value">{{ bookData.price }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">category:</span>
+    <span class="props__value">{{ bookData.category }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">create Date:</span>
+    <span class="props__value">{{ bookData.createDate | date: 'short' }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">is Available:</span>
+    <span class="props__value">{{ bookData.isAvailable }}</span>
+  </div>
+  <div class="porps__wrapper">
+    <span class="props__name">Available Count:</span>
+    <b>
+      <span class="props__value">{{ bookData.count }}</span>
+    </b>
+  </div>
+</div>
+
+<div class="controls">
+  <button [disabled]="bookData.count === 0" (click)="increase(bookData.id)" class="controls__button">+</button>
+  <button (click)="decrease(bookData.id)" class="controls__button">-</button>
+  <button (click)="remove(bookData.id)" class="controls__button">X</button>
+  <p class="count">X {{ bookData.countInCart }}</p>
+</div>

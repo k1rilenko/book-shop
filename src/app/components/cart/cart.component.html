@@ -1,0 +1,8 @@
+<ng-container *ngFor="let book of cartData">
+  <app-cart-item
+    [bookData]="book"
+    (increaseProduct)="increase($event)"
+    (decreaseProduct)="decrease($event)"
+    (deleteProduct)="remove($event)"
+  ></app-cart-item>
+</ng-container>
